@@ -1,0 +1,12 @@
+name: Test Job
+on:
+    push: 
+        branches: [ "main" ]
+    pull_request:
+        branches: [ "main" ]
+jobs:
+    print-date:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Print message to console
+            run: echo Today is $(date)
