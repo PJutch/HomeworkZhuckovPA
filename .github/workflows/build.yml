@@ -8,5 +8,5 @@ jobs:
     print-date:
         runs-on: ubuntu-latest
         steps:
-          - name: Print message to console
+          - name: Print date to console
             run: echo Today is $(date)
