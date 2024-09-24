@@ -17,6 +17,7 @@ public class Main {
         new Dolphin().eat(new Fish());
 
         new Eagle().eat(new IMeat() {
+            @Override
             public String name() {
                 return "mutton, idk";
             }

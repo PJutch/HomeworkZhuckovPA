@@ -1,10 +1,12 @@
 package ru.pa.zhuckov.homework;
 
 public class Tiger implements IWalking, ICarnivore {
+    @Override
     public void walk() {
         System.out.println("Tiger walks");
     }
 
+    @Override
     public void eat(IMeat meat) {
         if (!(meat instanceof Beef)) {
             throw new MeatTypeException("Tiger can only eat beef");
