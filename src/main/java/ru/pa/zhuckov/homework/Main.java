@@ -9,5 +9,10 @@ public class Main {
 
         new Dolphin().swim();
         new Eagle().fly();
+
+        new Horse().eat(new Grass());
+        new Camel().eat(new Grass());
+
+        new Tiger().eat(new Beef());
     }
 }
