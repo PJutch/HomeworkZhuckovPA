@@ -16,7 +16,11 @@ public class Main {
         new Tiger().eat(new Beef());
         new Dolphin().eat(new Fish());
 
-        new Eagle().eat(new IMeat() {});
+        new Eagle().eat(new IMeat() {
+            public String name() {
+                return "mutton, idk";
+            }
+        });
 
         new Dolphin().eat(new Beef());
     }

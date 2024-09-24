@@ -10,6 +10,6 @@ public class Dolphin implements ISwimming, ICarnivore {
             throw new MeatTypeException("Dolphin can only eat fish");
         }
 
-        System.out.println("Dolphin eats");
+        System.out.println("Dolphin eats " + meat.name());
     }
 }

@@ -10,6 +10,6 @@ public class Tiger implements IWalking, ICarnivore {
             throw new MeatTypeException("Tiger can only eat beef");
         }
 
-        System.out.println("Tiger eats");
+        System.out.println("Tiger eats " + meat.name());
     }
 }

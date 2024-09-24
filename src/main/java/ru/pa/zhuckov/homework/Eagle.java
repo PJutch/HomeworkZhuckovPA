@@ -6,6 +6,6 @@ public class Eagle implements IFlying {
     }
 
     public void eat(IMeat meat) {
-        System.out.println("Eagle eats");
+        System.out.println("Eagle eats " + meat.name());
     }
 }
