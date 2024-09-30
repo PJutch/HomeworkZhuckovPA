@@ -12,6 +12,6 @@ public class Dolphin extends Carnivore implements Swimming {
             throw new MeatTypeException("Dolphin can only eat fish");
         }
 
-        System.out.println("Dolphin eats " + meat.name());
+        System.out.println("Dolphin eats " + meat.toString());
     }
 }

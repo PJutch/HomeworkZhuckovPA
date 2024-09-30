@@ -12,6 +12,6 @@ public class Tiger extends Carnivore implements Walking {
             throw new MeatTypeException("Tiger can only eat beef");
         }
 
-        System.out.println("Tiger eats " + meat.name());
+        System.out.println("Tiger eats " + meat.toString());
     }
 }

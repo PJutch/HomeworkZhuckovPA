@@ -8,6 +8,6 @@ public class Eagle extends Carnivore implements Flying {
 
     @Override
     public void eat(Meat meat) {
-        System.out.println("Eagle eats " + meat.name());
+        System.out.println("Eagle eats " + meat.toString());
     }
 }
