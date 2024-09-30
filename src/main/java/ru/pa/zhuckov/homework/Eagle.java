@@ -7,7 +7,7 @@ public class Eagle extends Carnivore implements IFlying {
     }
 
     @Override
-    public void eat(IMeat meat) {
+    public void eat(Meat meat) {
         System.out.println("Eagle eats " + meat.name());
     }
 }

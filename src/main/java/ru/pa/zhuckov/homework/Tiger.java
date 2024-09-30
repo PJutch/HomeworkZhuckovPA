@@ -7,8 +7,8 @@ public class Tiger extends Carnivore implements IWalking {
     }
 
     @Override
-    public void eat(IMeat meat) {
-        if (!(meat instanceof Beef)) {
+    public void eat(Meat meat) {
+        if (meat != Meat.BEEF) {
             throw new MeatTypeException("Tiger can only eat beef");
         }
 

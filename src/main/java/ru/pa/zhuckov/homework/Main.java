@@ -13,16 +13,11 @@ public class Main {
         new Horse().eat(new Grass());
         new Camel().eat(new Grass());
 
-        new Tiger().eat(new Beef());
-        new Dolphin().eat(new Fish());
+        new Tiger().eat(Meat.BEEF);
+        new Dolphin().eat(Meat.FISH);
 
-        new Eagle().eat(new IMeat() {
-            @Override
-            public String name() {
-                return "mutton, idk";
-            }
-        });
+        new Eagle().eat(Meat.BEEF);
 
-        new Dolphin().eat(new Beef());
+        new Dolphin().eat(Meat.BEEF);
     }
 }

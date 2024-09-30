@@ -7,8 +7,8 @@ public class Dolphin extends Carnivore implements ISwimming {
     }
 
     @Override
-    public void eat(IMeat meat) {
-        if (!(meat instanceof Fish)) {
+    public void eat(Meat meat) {
+        if (meat != Meat.FISH) {
             throw new MeatTypeException("Dolphin can only eat fish");
         }
 
