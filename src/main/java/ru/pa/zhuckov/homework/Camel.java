@@ -1,6 +1,6 @@
 package ru.pa.zhuckov.homework;
 
-public class Camel implements IWalking, IHerbivore {
+public class Camel extends Herbivore implements IWalking {
     @Override
     public void walk() {
         System.out.println("Camel walks");

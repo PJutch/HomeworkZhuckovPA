@@ -1,6 +1,6 @@
 package ru.pa.zhuckov.homework;
 
-public class Tiger implements IWalking, ICarnivore {
+public class Tiger extends Carnivore implements IWalking {
     @Override
     public void walk() {
         System.out.println("Tiger walks");
