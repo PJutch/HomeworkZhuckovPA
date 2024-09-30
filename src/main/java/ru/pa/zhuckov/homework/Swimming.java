@@ -1,5 +1,5 @@
 package ru.pa.zhuckov.homework;
 
-public interface ISwimming {
+public interface Swimming {
     void swim();
 }

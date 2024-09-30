@@ -1,6 +1,6 @@
 package ru.pa.zhuckov.homework;
 
-public class Dolphin extends Carnivore implements ISwimming {
+public class Dolphin extends Carnivore implements Swimming {
     @Override
     public void swim() {
         System.out.println("Dolphin swims");

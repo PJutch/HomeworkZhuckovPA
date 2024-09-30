@@ -1,5 +1,5 @@
 package ru.pa.zhuckov.homework;
 
-public interface IWalking {
+public interface Walking {
     void walk();
 }

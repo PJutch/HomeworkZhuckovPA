@@ -1,6 +1,6 @@
 package ru.pa.zhuckov.homework;
 
-public class Eagle extends Carnivore implements IFlying {
+public class Eagle extends Carnivore implements Flying {
     @Override
     public void fly() {
         System.out.println("Eagle flies");

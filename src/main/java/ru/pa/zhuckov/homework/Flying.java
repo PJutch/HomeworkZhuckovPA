@@ -1,5 +1,5 @@
 package ru.pa.zhuckov.homework;
 
-public interface IFlying {
+public interface Flying {
     void fly();
 }
