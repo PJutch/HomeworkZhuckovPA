@@ -25,13 +25,6 @@ public class CustomArrayList<T> implements CustomList<T> {
         length = this.values.length;
     }
 
-    /** Выделяет место для ещё одного элемента */
-    private void reserve1() {
-        if (length >= values.length) {
-            values = Arrays.copyOf(values, Math.max(2 * values.length, 1));
-        }
-    }
-
     /**
      * Добавляет value в конец списка
      * Время работы - O(n), амортизированное O(1)
@@ -40,10 +33,7 @@ public class CustomArrayList<T> implements CustomList<T> {
      */
     @Override
     public void add(T value) {
-        reserve1();
-
-        values[length] = value;
-        ++length;
+        add(length, value);
     }
 
     /**
@@ -54,7 +44,9 @@ public class CustomArrayList<T> implements CustomList<T> {
      */
     @Override
     public void add(int index, T value) {
-        reserve1();
+        if (length >= values.length) {
+            values = Arrays.copyOf(values, Math.max(2 * values.length, 1));
+        }
 
         for (int i = index; i < length; ++i) {
             values[i + 1] = values[i];
