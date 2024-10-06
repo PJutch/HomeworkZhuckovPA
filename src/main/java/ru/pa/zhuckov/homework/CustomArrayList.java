@@ -48,6 +48,10 @@ public class CustomArrayList<T> implements CustomList<T> {
      */
     @Override
     public void add(int index, T value) throws IndexOutOfBoundsException {
+        if (value == null) {
+            throw new NullPointerException("null values aren't allowed in CustomArrayList");
+        }
+
         if (index < 0 || index > length) {
             throw new IndexOutOfBoundsException(index);
         }
