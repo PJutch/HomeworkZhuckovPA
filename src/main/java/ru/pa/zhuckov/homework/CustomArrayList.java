@@ -82,6 +82,7 @@ public class CustomArrayList<T> implements CustomList<T> {
             values[i] = values[i + 1];
         }
 
+        values[length] = null; // Удаляем лишнюю ссылку, чтобы память не утекала
         --length;
 
         return oldValue;
