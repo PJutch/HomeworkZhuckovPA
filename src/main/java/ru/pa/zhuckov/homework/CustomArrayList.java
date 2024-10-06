@@ -1,5 +1,7 @@
 package ru.pa.zhuckov.homework;
 
+import java.util.Arrays;
+
 public class CustomArrayList<T> implements CustomList<T> {
     private T[] values = (T[]) new Object[0];
 
@@ -34,5 +36,10 @@ public class CustomArrayList<T> implements CustomList<T> {
 
         values = newValues;
         return oldValue;
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(values);
     }
 }
