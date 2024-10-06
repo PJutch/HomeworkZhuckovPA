@@ -34,6 +34,6 @@ public class Main {
         System.out.println(list2);
 
         System.out.println("Boundary check: ");
-        System.out.println(list2.get(4));
+        System.out.println(list2.get(3));
     }
 }

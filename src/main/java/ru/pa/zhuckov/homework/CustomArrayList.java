@@ -73,7 +73,7 @@ public class CustomArrayList<T> implements CustomList<T> {
      */
     @Override
     public T get(int index) throws IndexOutOfBoundsException {
-        if (index < 0 || index > length) {
+        if (index < 0 || index >= length) {
             throw new IndexOutOfBoundsException(index);
         }
         return values[index];
@@ -91,7 +91,7 @@ public class CustomArrayList<T> implements CustomList<T> {
      */
     @Override
     public T remove(int index) throws IndexOutOfBoundsException {
-        if (index < 0 || index > length) {
+        if (index < 0 || index >= length) {
             throw new IndexOutOfBoundsException(index);
         }
 
