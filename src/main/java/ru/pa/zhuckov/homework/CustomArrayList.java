@@ -4,25 +4,30 @@ import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
     private T[] values;
+    private int length;
 
     public CustomArrayList(T... values) {
         this.values = values;
+        length = this.values.length;
     }
 
     @Override
     public void add(T value) {
-        T[] newValues = (T[]) new Object[values.length + 1];
-        for (int i = 0; i < values.length; ++i) {
-            newValues[i] = values[i];
+        if (length >= values.length) {
+            if (values.length == 0) {
+                values = Arrays.copyOf(values, 1);
+            } else {
+                values = Arrays.copyOf(values, 2 * values.length);
+            }
         }
 
-        newValues[values.length] = value;
-        values = newValues;
+        values[length] = value;
+        ++length;
     }
 
     @Override
     public T get(int index) throws IndexOutOfBoundsException {
-        if (index < 0 || index > values.length) {
+        if (index < 0 || index > length) {
             throw new IndexOutOfBoundsException(index);
         }
         return values[index];
@@ -30,27 +35,23 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @Override
     public T remove(int index) throws IndexOutOfBoundsException {
-        if (index < 0 || index > values.length) {
+        if (index < 0 || index > length) {
             throw new IndexOutOfBoundsException(index);
         }
 
         T oldValue = get(index);
 
-        T[] newValues = (T[]) new Object[values.length - 1];
-        for (int i = 0; i < index; ++i) {
-            newValues[i] = values[i];
+        for (int i = index; i < length + 1; ++i) {
+            values[i] = values[i + 1];
         }
 
-        for (int i = index + 1; i < values.length; ++i) {
-            newValues[i - 1] = values[i];
-        }
+        --length;
 
-        values = newValues;
         return oldValue;
     }
 
     @Override
     public String toString() {
-        return Arrays.toString(values);
+        return Arrays.toString(Arrays.copyOf(values, length));
     }
 }
