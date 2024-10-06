@@ -47,6 +47,23 @@ public class CustomArrayList<T> implements CustomList<T> {
     }
 
     /**
+     * Добавляет value в конец списка
+     * Время работы - O(n), амортизированное O(1)
+     *
+     * @param value значение элемента, добавленного в конец списка
+     */
+    @Override
+    public void add(int index, T value) {
+        reserve1();
+
+        for (int i = index; i < length; ++i) {
+            values[i + 1] = values[i];
+        }
+        values[index] = value;
+        ++length;
+    }
+
+    /**
      * Получает элемент с индексом index
      * Время работы - O(1)
      *
