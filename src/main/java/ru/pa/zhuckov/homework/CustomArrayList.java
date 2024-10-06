@@ -65,6 +65,7 @@ public class CustomArrayList<T> implements CustomList<T> {
      * @param index индекс удаляемого элемента (начиная с 0)
      * @return значение удалённого элемента
      * @throws IndexOutOfBoundsException если index вне [0, length)
+     * @implNote не уменьшает выделенный массив
      */
     @Override
     public T remove(int index) throws IndexOutOfBoundsException {
