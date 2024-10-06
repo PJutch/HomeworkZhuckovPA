@@ -34,11 +34,7 @@ public class CustomArrayList<T> implements CustomList<T> {
     @Override
     public void add(T value) {
         if (length >= values.length) {
-            if (values.length == 0) {
-                values = Arrays.copyOf(values, 1);
-            } else {
-                values = Arrays.copyOf(values, 2 * values.length);
-            }
+            values = Arrays.copyOf(values, Math.max(2 * values.length, 1));
         }
 
         values[length] = value;
