@@ -5,7 +5,13 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @Override
     public void add(T value) {
-
+        T[] newValues = (T[]) new Object[values.length + 1];
+        for (int i = 0; i < values.length; ++i) {
+            newValues[i] = values[i];
+        }
+        
+        newValues[values.length] = value;
+        values = newValues;
     }
 
     @Override
