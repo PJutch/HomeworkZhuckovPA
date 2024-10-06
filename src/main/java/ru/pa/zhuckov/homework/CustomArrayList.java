@@ -10,7 +10,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @Override
     public T get(int index) {
-
+        return values[index];
     }
 
     @Override
