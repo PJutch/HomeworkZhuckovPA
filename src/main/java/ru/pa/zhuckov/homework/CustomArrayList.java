@@ -37,13 +37,21 @@ public class CustomArrayList<T> implements CustomList<T> {
     }
 
     /**
-     * Добавляет value в конец списка
-     * Время работы - O(n), амортизированное O(1)
+     * Добавляет value по индексу
+     * Время работы - O(n)
      *
+     * @param index индекс, который получит новй элемент
+     *              (т. е. вставка <b>перед</b> index).
+     *              Если index == length, вставка в конец
      * @param value значение элемента, добавленного в конец списка
+     * @throws IndexOutOfBoundsException если индекс вне [index, length]
      */
     @Override
-    public void add(int index, T value) {
+    public void add(int index, T value) throws IndexOutOfBoundsException {
+        if (index < 0 || index > length) {
+            throw new IndexOutOfBoundsException(index);
+        }
+
         if (length >= values.length) {
             values = Arrays.copyOf(values, Math.max(2 * values.length, 1));
         }

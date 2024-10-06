@@ -19,10 +19,10 @@ public interface CustomList<T> {
      * Добавляет элемент по индексу.
      * Старые элементы сдвигаются вправо
      *
-     * @param value значение нового элемента
      * @param index индекс, который получит новй элемент
      *              (т. е. вставка <b>перед</b> index).
      *              Если index == length, вставка в конец
+     * @param value значение нового элемента
      * @throws IndexOutOfBoundsException если индекс вне [0, length]
      */
     void add(int index, T value) throws IndexOutOfBoundsException;
