@@ -2,10 +2,10 @@ package ru.pa.zhuckov.homework;
 
 public class Main {
     public static void main(String[] args) {
-        CustomArrayList<Integer> list = new CustomArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
+        CustomArrayList<Integer> list = new CustomArrayList<>(1, 2, 3);
+        System.out.println(list);
+
+        list.add(4);
         System.out.println(list);
 
         System.out.println(list.get(1));

@@ -3,7 +3,11 @@ package ru.pa.zhuckov.homework;
 import java.util.Arrays;
 
 public class CustomArrayList<T> implements CustomList<T> {
-    private T[] values = (T[]) new Object[0];
+    private T[] values;
+
+    public CustomArrayList(T... values) {
+        this.values = values;
+    }
 
     @Override
     public void add(T value) {
