@@ -9,7 +9,7 @@ public class CustomArrayList<T> implements CustomList<T> {
         for (int i = 0; i < values.length; ++i) {
             newValues[i] = values[i];
         }
-        
+
         newValues[values.length] = value;
         values = newValues;
     }
@@ -21,6 +21,18 @@ public class CustomArrayList<T> implements CustomList<T> {
 
     @Override
     public T remove(int index) {
+        T oldValue = get(index);
 
+        T[] newValues = (T[]) new Object[values.length - 1];
+        for (int i = 0; i < index; ++i) {
+            newValues[i] = values[i];
+        }
+
+        for (int i = index + 1; i < values.length; ++i) {
+            newValues[i - 1] = values[i];
+        }
+
+        values = newValues;
+        return oldValue;
     }
 }
