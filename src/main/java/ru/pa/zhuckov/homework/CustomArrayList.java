@@ -21,12 +21,19 @@ public class CustomArrayList<T> implements CustomList<T> {
     }
 
     @Override
-    public T get(int index) {
+    public T get(int index) throws IndexOutOfBoundsException {
+        if (index < 0 || index > values.length) {
+            throw new IndexOutOfBoundsException(index);
+        }
         return values[index];
     }
 
     @Override
-    public T remove(int index) {
+    public T remove(int index) throws IndexOutOfBoundsException {
+        if (index < 0 || index > values.length) {
+            throw new IndexOutOfBoundsException(index);
+        }
+
         T oldValue = get(index);
 
         T[] newValues = (T[]) new Object[values.length - 1];
